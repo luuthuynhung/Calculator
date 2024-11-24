@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" thread-count="1">
+	<listeners>
+		<listener class-name="com.calculator.utils.ReportListener"/>
+	</listeners>
+    <test thread-count="1" name="Calculator">
+	<parameter name="reportLocation" value="target/extentReport.html"/>
+	<parameter name="url" value="https://www.google.com/search?q=calculator"/>
+	<parameter name="browser" value="chrome"/>
+	<classes>
+		<class name="com.calculator.tests.CalculatorTest">
+			<methods>
+				<include name="testAddition"/>
+				<include name="testSubtraction"/>
+				<include name="testMultiplication"/>
+				<include name="testDivision"/>
+				<include name="testDivideByZero"/>
+				<include name="testClear"/>
+				<include name="testDecimalPoint"/>
+			</methods>
+		</class>
+	</classes>
+  </test>
+</suite>
